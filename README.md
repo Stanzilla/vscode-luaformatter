@@ -1,6 +1,6 @@
-# Pandoc Format
+# vscode-luaformatter
 
-A Visual Studio Code formatter for Markdown using [Pandoc](http://pandoc.org).
+A Visual Studio Code formatter for Lua using [Luaformatter](https://github.com/LuaDevelopmentTools/luaformatter).
 
 ## Features
 
@@ -8,10 +8,10 @@ A Visual Studio Code formatter for Markdown using [Pandoc](http://pandoc.org).
 
 ## Requirements
 
-Requires [Pandoc](http://pandoc.org) to be installed.
+Requires [Luaformatter](https://github.com/LuaDevelopmentTools/luaformatter) to be installed.
 
 ## Release Notes
 
 ### 0.0.1
 
-Initial release. Developed and tested on macOS.
+Initial release. Developed and tested on Windows.
