@@ -8,7 +8,7 @@ class LuaformatterEditsProvider implements
   command: string;
   arguments: Array<string>;
 
-  formatPandoc(text: string) {
+  formatLua(text: string) {
     const config = vscode.workspace.getConfiguration('luaformatter');
     let cmd = config.get('path', 'luaformatter.path');
 
@@ -23,8 +23,8 @@ class LuaformatterEditsProvider implements
     var fileNameOnly = path.parse(fileName).name;
 
     var args = []
+    // autosave config
     let autosave = config.get('autosave', 'luaformatter.autosave');
-    console.log(autosave)
     if (autosave[0]) {
       args.push('-a')
     }
@@ -33,7 +33,7 @@ class LuaformatterEditsProvider implements
     // tabs config
     args.push('-t' + config.get('tabs', 'luaformatter.tabs'))
     // delimiter config
-    //args.push('-d' + config.get('delimiter', 'luaformatter.delimiter'))
+    // args.push('-d' + config.get('delimiter', 'luaformatter.delimiter'))
     args.push(fullName)
 
     let result = child_process.spawnSync(cmd, args, { 'input': text });
@@ -50,7 +50,7 @@ class LuaformatterEditsProvider implements
     document: vscode.TextDocument, options: vscode.FormattingOptions,
     token: vscode.CancellationToken):
     vscode.TextEdit[] | Thenable<vscode.TextEdit[]> {
-    let formatted = this.formatPandoc(document.getText());
+    let formatted = this.formatLua(document.getText());
     if (formatted != '')
       return [vscode.TextEdit.replace(
         /* TODO Find Range equivalent for [0, infinity] */
@@ -63,7 +63,7 @@ class LuaformatterEditsProvider implements
     document: vscode.TextDocument, range: vscode.Range,
     options: vscode.FormattingOptions, token: vscode.CancellationToken):
     vscode.TextEdit[] | Thenable<vscode.TextEdit[]> {
-    let formatted = this.formatPandoc(document.getText(range));
+    let formatted = this.formatLua(document.getText(range));
     if (formatted != '')
       return [vscode.TextEdit.replace(range, formatted)];
     else
