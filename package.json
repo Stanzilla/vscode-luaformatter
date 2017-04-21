@@ -2,8 +2,8 @@
     "name": "vscode-luaformatter",
     "displayName": "vscode-luaformatter",
     "description": "Format Lua files with Luaformatter.",
-    "version": "0.0.1",
-    "publisher": "Stanzilla",
+    "version": "0.0.2",
+    "publisher": "stanzilla",
     "repository": {
         "type": "git",
         "url": "https://github.com/Stanzilla/vscode-luaformatter"
