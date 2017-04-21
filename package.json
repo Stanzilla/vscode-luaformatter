@@ -4,9 +4,20 @@
     "description": "Format Lua files with Luaformatter.",
     "version": "0.0.1",
     "publisher": "Stanzilla",
-    "repository": "https://github.com/Stanzilla/vscode-luaformatter",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Stanzilla/vscode-luaformatter"
+    },
+    "bugs": {
+        "url": "https://github.com/Stanzilla/vscode-luaformatter/issues"
+    },
     "engines": {
         "vscode": "^1.7.0"
+    },
+    "icon": "img/icon.svg",
+    "galleryBanner": {
+     "color": "#313191",
+     "theme": "dark"
     },
     "categories": [
         "Formatters"
