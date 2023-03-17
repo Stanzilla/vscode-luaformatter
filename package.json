@@ -72,7 +72,7 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
-        "typescript": "^4.0.2",
+        "typescript": "^5.0.2",
         "vscode": "^1.1.0",
         "mocha": "^10.0.0",
         "@types/node": "^18.0.3",
